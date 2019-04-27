@@ -21,11 +21,13 @@ print(sm)
 # Assessment data in socrata https://datacatalog.cookcountyil.gov/resource/bcnq-qi2z.json
 
 with Socrata("datacatalog.cookcountyil.gov", token) as client:
-    re = client.get("bcnq-qi2z", limit=2)
+    re = client.get("bcnq-qi2z", limit=2) # final assessment
+    da = client.get('5pge-nu6u', limit=2) # assessment data
     client.close()
 
 sm = pd.DataFrame(re)
+dta = pd.DataFrame(da)
 
-print(sm)
+print(dta)
 
 # Zoning districts data https://data.cityofchicago.org/resource/dj47-wfun.json
