@@ -32,6 +32,7 @@ with Socrata("datacatalog.cookcountyil.gov", token) as client:
     re = client.get("bcnq-qi2z", limit=2) # final assessment
     da = client.get('5pge-nu6u', limit=2) # assessment data
     lt = client.get('urmr-mchf', limit=2) # LOT - 2016 lots map from Assessor
+    pr = client.get('6gsb-287d', limit=2) # Parcels - 2016
     client.close()
 
 sm = pd.DataFrame.from_dict(re)
