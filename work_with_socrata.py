@@ -17,7 +17,7 @@ with Socrata("data.cityofchicago.org", token) as client:
     # the other Id for the same is ydr8-5enu (checked the resulting data
     # https://dev.socrata.com/foundry/data.cityofchicago.org/ydr8-5enu
     # with it the client.get_metadata gives the right response.
-    meta_of_set = client.get_metadata('ydr8-5enu')
+    meta_of_set = client.get_metadata('ydr8-5enu')     # Building permits
     column_names = [x['name'] for x in meta_of_set['columns']]
     re = client.get('ydr8-5enu', limit=2)
     client.close()
