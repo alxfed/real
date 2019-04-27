@@ -29,9 +29,9 @@ print(sm)
 # Assessment data in socrata https://datacatalog.cookcountyil.gov/resource/bcnq-qi2z.json
 
 with Socrata("datacatalog.cookcountyil.gov", token) as client:
-    ds = client.datasets(limit=0, offset=0)
     re = client.get("bcnq-qi2z", limit=2) # final assessment
     da = client.get('5pge-nu6u', limit=2) # assessment data
+    lt = client.get('urmr-mchf', limit=2) # LOT - 2016 lots map from Assessor
     client.close()
 
 sm = pd.DataFrame.from_dict(re)
