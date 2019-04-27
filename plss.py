@@ -63,3 +63,16 @@ incorporated municipal zoning districts.
 '''
 
 # https://datacatalog.cookcountyil.gov/resource/yski-9fq7.json
+
+'''
+Unincorporated Zoning districts
+This is a Cook County Feature class of Unincorporated Zoning 
+District Boundaries (Aggregate). This data is provided by the 
+Cook County Dept. Of Building and Zoning and is maintained by 
+the Cook County Zoning Board of Appeals. 
+Only unincorporated district boundaries are available, please 
+contact specific municipalities for questions regarding 
+incorporated municipal zoning districts.
+'''
+
+# https://datacatalog.cookcountyil.gov/resource/jwue-cxuq.json
