@@ -35,3 +35,17 @@ per section.
 '''
 
 # PLSS Line         https://datacatalog.cookcountyil.gov/resource/yvw8-g53g.json
+
+'''
+The PLSS data is modeled as a single composite network 
+coverage that encompasses townships (area), sections (subarea), 
+quarter sections, and half quarter section. If an indigenous 
+people's reserve was present on the tax map, it was digitized 
+to create subpolygons of the half-quarter section, and those 
+polygons were attributed with the name of the reserve. Within 
+this PLSS data set, a half-quarter section is the smallest 
+polygon unit, except in cases where an Indigenous People's 
+Reserve line is present.
+'''
+
+# Section           https://datacatalog.cookcountyil.gov/resource/xhzu-6w77.json
