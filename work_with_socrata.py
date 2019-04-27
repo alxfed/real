@@ -11,7 +11,15 @@ with open('socrata_API_token.txt', 'r') as token_file: # zoning and permits app
     token_file.close()
 
 with Socrata("data.cityofchicago.org", token) as client:
-    re = client.get("building-permits", limit=2)
+    # the dataset Id on the page (for copying) is 'building-permits'
+    # and it works with client.get, however, it doesn't work with
+    # .get_metadata.
+    # the other Id for the same is ydr8-5enu (checked the resulting data
+    # https://dev.socrata.com/foundry/data.cityofchicago.org/ydr8-5enu
+    # with it the client.get_metadata gives the right response.
+    meta_of_set = client.get_metadata('ydr8-5enu')
+    column_names = [x['name'] for x in meta_of_set['columns']]
+    re = client.get('ydr8-5enu', limit=2)
     client.close()
 
 sm = pd.DataFrame.from_dict(re)
