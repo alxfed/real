@@ -17,3 +17,15 @@ with Socrata("data.cityofchicago.org", token) as client:
 sm = pd.DataFrame(re)
 
 print(sm)
+
+# Assessment data in socrata https://datacatalog.cookcountyil.gov/resource/bcnq-qi2z.json
+
+with Socrata("datacatalog.cookcountyil.gov", token) as client:
+    re = client.get("bcnq-qi2z", limit=2)
+    client.close()
+
+sm = pd.DataFrame(re)
+
+print(sm)
+
+# Zoning districts data https://data.cityofchicago.org/resource/dj47-wfun.json
