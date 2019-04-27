@@ -14,19 +14,20 @@ with Socrata("data.cityofchicago.org", token) as client:
     re = client.get("building-permits", limit=2)
     client.close()
 
-sm = pd.DataFrame(re)
+sm = pd.DataFrame.from_dict(re)
 
 print(sm)
 
 # Assessment data in socrata https://datacatalog.cookcountyil.gov/resource/bcnq-qi2z.json
 
 with Socrata("datacatalog.cookcountyil.gov", token) as client:
+    ds = client.datasets(limit=0, offset=0)
     re = client.get("bcnq-qi2z", limit=2) # final assessment
     da = client.get('5pge-nu6u', limit=2) # assessment data
     client.close()
 
-sm = pd.DataFrame(re)
-dta = pd.DataFrame(da)
+sm = pd.DataFrame.from_dict(re)
+dta = pd.DataFrame.from_dict(da)
 
 print(dta)
 
