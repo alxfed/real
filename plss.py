@@ -37,6 +37,7 @@ per section.
 # PLSS Line         https://datacatalog.cookcountyil.gov/resource/yvw8-g53g.json
 
 '''
+Section
 The PLSS data is modeled as a single composite network 
 coverage that encompasses townships (area), sections (subarea), 
 quarter sections, and half quarter section. If an indigenous 
