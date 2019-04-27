@@ -52,7 +52,7 @@ Reserve line is present.
 # Section           https://datacatalog.cookcountyil.gov/resource/xhzu-6w77.json
 
 '''
-Unincorporates Zoning by Parcel
+Unincorporated Zoning by Parcel
 This is a Cook County Feature class of Unincorporated Zoning 
 District Boundaries by parcel. This data is provided by the 
 Cook County Dept. Of Building and Zoning and is maintained by 
