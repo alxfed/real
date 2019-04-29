@@ -38,6 +38,15 @@ CCGISDATA_PARCEL_2012 = '3j29-aw9a' # map page /GIS-Maps/ccgisdata-Parcel-2012/e
 CCGISDATA_PARCEL_2013 = '3git-3hp2' # map page /GIS-Maps/ccgisdata-Parcel-2013/5i2c-y2u6
 CCGISDATA_PARCEL_2014 = 'yf2z-xf2p' # map page /GIS-Maps/ccgisdata-Parcel-2014/2m9h-cq6j
 CCGISDATA_PARCEL_2015 = 'trnc-t2et' # map page /GIS-Maps/ccgisdata-Parcel-2015/nxb6-rw3s
+
+'''
+Parcels 2016 field names:
+objectid, name, 
+the_geom, 
+pin10, pina, pinsa, pinb, pinp, pinu, pinac,
+taxcode, job_no, upper_elev, lower_elev, survey_cal,
+parceltype, shape_star, shape_stle
+'''
 CCGISDATA_PARCELS_2016= '6gsb-287d' # map page /GIS-Maps/ccgisdata-Parcels-2016/a33b-b59u
 
 
@@ -54,7 +63,7 @@ from sodapy import Socrata
 import pandas as pd
 
 with Socrata(CC_END_POINT_DOMAIN, token) as client:
-    chunk = client.get(CCGISDATA_PARCEL_2000, limit=2)    # Read a couple of lines
+    chunk = client.get(CCGISDATA_PARCELS_2016, limit=2)    # Read a couple of lines
     client.close()
 
 dta = pd.DataFrame.from_dict(chunk)
