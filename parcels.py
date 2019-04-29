@@ -29,11 +29,20 @@ CCGISDATA_PARCEL_2002 = 'dckf-92bv' # map page /GIS-Maps/ccgisdata-Parcel-2002/3
 CCGISDATA_PARCEL_2003 = 'anwy-2bet' # map page /GIS-Maps/ccgisdata-Parcel-2003/gcqr-kbqq
 CCGISDATA_PARCEL_2004 = 'sg9a-x6ka' # map page /GIS-Maps/ccgisdata-Parcel-2004/6jt3-ndyu
 CCGISDATA_PARCEL_2005 = '7emi-v3x2' # map page /GIS-Maps/ccgisdata-Parcel-2005/f42p-dbfm
+CCGISDATA_PARCEL_2006 = 'w98x-3iwy' # map page /GIS-Maps/ccgisdata-Parcel-2006/r5e4-5wi6
+CCGISDATA_PARCEL_2007 = 'spy4-y5mz' # map page /GIS-Maps/ccgisdata-Parcel-2007/mvxv-d4di
+CCGISDATA_PARCEL_2008 = 'ueaz-2czr' # map page /GIS-Maps/ccgisdata-Parcel-2008/54r5-cenp
+CCGISDATA_PARCEL_2009 = 'abae-6ajx' # map page /GIS-Maps/ccgisdata-Parcel-2009/5rc6-e9r6
+CCGISDATA_PARCEL_2010 = 'nhsi-bt2g' # map page /GIS-Maps/ccgisdata-Parcel-2010/fgrb-v8fq
+CCGISDATA_PARCEL_2011 = '673u-r3as' # map page /GIS-Maps/ccgisdata-Parcel-2011/9u3u-ac9c
+
 
 
 # The list of datasets
 AVAILABLE_DATASETS = [CCGISDATA_PARCEL_2000, CCGISDATA_PARCEL_2001, CCGISDATA_PARCEL_2002,
-                      CCGISDATA_PARCEL_2003, CCGISDATA_PARCEL_2004, CCGISDATA_PARCEL_2002]
+                      CCGISDATA_PARCEL_2003, CCGISDATA_PARCEL_2004, CCGISDATA_PARCEL_2005,
+                      CCGISDATA_PARCEL_2006, CCGISDATA_PARCEL_2007, CCGISDATA_PARCEL_2008,
+                      ]
 
 
 from sodapy import Socrata
