@@ -29,7 +29,7 @@ print(sm)
 # Assessment data in socrata https://datacatalog.cookcountyil.gov/resource/bcnq-qi2z.json
 
 with Socrata("datacatalog.cookcountyil.gov", token) as client:
-    re = client.get("bcnq-qi2z", limit=2) # final assessment
+    re = client.get("bcnq-qi2z", limit=10) # final assessment
     da = client.get('5pge-nu6u', limit=2) # input data for assessment
     lt = client.get('urmr-mchf', limit=2) # LOT - 2016 lots map from Assessor
     pr = client.get('6gsb-287d', limit=2) # Parcels - 2016

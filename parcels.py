@@ -21,7 +21,6 @@ pin10, pin14, pina, pinsa, pinb, pinp, pinu, pinac,
 taxcode, job_no, parceltype, upper_elev, lower_elev,
 shape_area, shape_len
 '''
-
 CCGISDATA_PARCEL_2000 = 'bbcr-ryng' # map page /GIS-Maps/ccgisdata-Parcel-2000/x2ib-rt29
 CCGISDATA_PARCEL_2001 = 't799-vjyq' # map page /GIS-Maps/ccgisdata-Parcel-2001/i2km-7cwi
 CCGISDATA_PARCEL_2002 = 'dckf-92bv' # map page /GIS-Maps/ccgisdata-Parcel-2002/3wb8-2she
@@ -37,15 +36,22 @@ CCGISDATA_PARCEL_2011 = '673u-r3as' # map page /GIS-Maps/ccgisdata-Parcel-2011/9
 CCGISDATA_PARCEL_2012 = '3j29-aw9a' # map page /GIS-Maps/ccgisdata-Parcel-2012/e62c-6rz8
 CCGISDATA_PARCEL_2013 = '3git-3hp2' # map page /GIS-Maps/ccgisdata-Parcel-2013/5i2c-y2u6
 CCGISDATA_PARCEL_2014 = 'yf2z-xf2p' # map page /GIS-Maps/ccgisdata-Parcel-2014/2m9h-cq6j
+'''
+Parcel 2015 field names:
+the_geom
+pin10, pin14, pinsa, pinb, pinp, pinu, pinac
+taxcode, job_no, parceltype, upper_elev, lower_elev
+survey_cal, shape_star, shape_stle
+'''
 CCGISDATA_PARCEL_2015 = 'trnc-t2et' # map page /GIS-Maps/ccgisdata-Parcel-2015/nxb6-rw3s
 
 '''
 Parcels 2016 field names:
 objectid, name, 
 the_geom, 
-pin10, pina, pinsa, pinb, pinp, pinu, pinac,
-taxcode, job_no, upper_elev, lower_elev, survey_cal,
-parceltype, shape_star, shape_stle
+pin10, <no pin14>, pina, pinsa, pinb, pinp, pinu, pinac,
+taxcode, job_no, parceltype, upper_elev, lower_elev,
+survey_cal, shape_star, shape_stle
 '''
 CCGISDATA_PARCELS_2016= '6gsb-287d' # map page /GIS-Maps/ccgisdata-Parcels-2016/a33b-b59u
 
