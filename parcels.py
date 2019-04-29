@@ -1,6 +1,5 @@
 """
 Lots and the history of parcels, mergers and splits
-
 data is from datacatalog cookcountyil gov
 """
 
@@ -35,14 +34,20 @@ CCGISDATA_PARCEL_2008 = 'ueaz-2czr' # map page /GIS-Maps/ccgisdata-Parcel-2008/5
 CCGISDATA_PARCEL_2009 = 'abae-6ajx' # map page /GIS-Maps/ccgisdata-Parcel-2009/5rc6-e9r6
 CCGISDATA_PARCEL_2010 = 'nhsi-bt2g' # map page /GIS-Maps/ccgisdata-Parcel-2010/fgrb-v8fq
 CCGISDATA_PARCEL_2011 = '673u-r3as' # map page /GIS-Maps/ccgisdata-Parcel-2011/9u3u-ac9c
-
+CCGISDATA_PARCEL_2012 = '3j29-aw9a' # map page /GIS-Maps/ccgisdata-Parcel-2012/e62c-6rz8
+CCGISDATA_PARCEL_2013 = '3git-3hp2' # map page /GIS-Maps/ccgisdata-Parcel-2013/5i2c-y2u6
+CCGISDATA_PARCEL_2014 = 'yf2z-xf2p' # map page /GIS-Maps/ccgisdata-Parcel-2014/2m9h-cq6j
+CCGISDATA_PARCEL_2015 = 'trnc-t2et' # map page /GIS-Maps/ccgisdata-Parcel-2015/nxb6-rw3s
+CCGISDATA_PARCELS_2016= '6gsb-287d' # map page /GIS-Maps/ccgisdata-Parcels-2016/a33b-b59u
 
 
 # The list of datasets
 AVAILABLE_DATASETS = [CCGISDATA_PARCEL_2000, CCGISDATA_PARCEL_2001, CCGISDATA_PARCEL_2002,
                       CCGISDATA_PARCEL_2003, CCGISDATA_PARCEL_2004, CCGISDATA_PARCEL_2005,
                       CCGISDATA_PARCEL_2006, CCGISDATA_PARCEL_2007, CCGISDATA_PARCEL_2008,
-                      ]
+                      CCGISDATA_PARCEL_2009, CCGISDATA_PARCEL_2010, CCGISDATA_PARCEL_2011,
+                      CCGISDATA_PARCEL_2012, CCGISDATA_PARCEL_2013, CCGISDATA_PARCEL_2014,
+                      CCGISDATA_PARCEL_2015, CCGISDATA_PARCELS_2016]
 
 
 from sodapy import Socrata
