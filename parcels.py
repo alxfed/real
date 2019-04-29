@@ -23,7 +23,13 @@ taxcode, job_no, parceltype, upper_elev, lower_elev,
 shape_area, shape_len
 '''
 
-CCGISDATA_PARCEL_2000 = 'bbcr-ryng' # map page/GIS-Maps/ccgisdata-Parcel-2000/x2ib-rt29
+CCGISDATA_PARCEL_2000 = 'bbcr-ryng' # map page /GIS-Maps/ccgisdata-Parcel-2000/x2ib-rt29
+CCGISDATA_PARCEL_2001 = 't799-vjyq' # map page /GIS-Maps/ccgisdata-Parcel-2001/i2km-7cwi
+CCGISDATA_PARCEL_2002 = 'dckf-92bv' # map page /GIS-Maps/ccgisdata-Parcel-2002/3wb8-2she
+
+
+# The list of datasets
+AVAILABLE_DATASETS = [CCGISDATA_PARCEL_2000, CCGISDATA_PARCEL_2001, ]
 
 
 from sodapy import Socrata
