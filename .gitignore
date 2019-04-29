@@ -103,6 +103,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# idea exclude
+.idea
+
 # app token
 socrata_API_token.txt
 
