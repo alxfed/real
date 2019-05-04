@@ -35,10 +35,10 @@ api_url = '{}orgs/{}/repos'.format(api_url_base, api_resource_id)
 
 # but f-string for complex requests _for sure_
 
-requ = '$where='
+requ = 'where'
 loc = ''
 
-api_request = f'{api_url}?{requ}'
+api_request = f'{api_url}?${requ}={loc}'
 
 # but if the parameters of the query are in a dictionary
 # then the trick is:
