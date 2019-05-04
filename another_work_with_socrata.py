@@ -25,3 +25,25 @@ else:
     print('[!] Request Failed')
 
 print('ok!')
+
+# url string formation
+
+api_url_base = 'https://data.cityofchicago.org/resource/'
+api_resource_id = 'ydr8-5enu.json'
+
+api_url = '{}orgs/{}/repos'.format(api_url_base, api_resource_id)
+
+# but f-string for complex requests _for sure_
+
+requ = '$where='
+loc = ''
+
+api_request = f'{api_url}?{requ}'
+
+# but if the parameters of the query are in a dictionary
+# then the trick is:
+
+'''
+person = {'name': 'Alex', 'age': 64}
+"Hello, {name}. You are {age}.".format(**person)
+'''
