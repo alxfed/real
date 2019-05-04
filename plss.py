@@ -1,5 +1,6 @@
 """
 Cadaster system in Chicago as of 2014
+based on https://nationalmap.gov/small_scale/a_plss.html
 """
 
 '''
