@@ -22,6 +22,7 @@ sections (subarea), quarter sections, and half quarter section.
 '''
 
 # Survey Township   https://datacatalog.cookcountyil.gov/resource/iz5k-qtpu.json
+# https://datacatalog.cookcountyil.gov/api/odata/v4/iz5k-qtpu
 
 '''
 PLSS Line
@@ -77,3 +78,19 @@ incorporated municipal zoning districts.
 '''
 
 # https://datacatalog.cookcountyil.gov/resource/jwue-cxuq.json
+
+'''
+Community Areas
+'''
+
+# https://data.cityofchicago.org/resource/igwz-8jzy.json
+
+'''
+Wards 2015
+'''
+
+# https://data.cityofchicago.org/resource/k9yb-bpqx.json
+
+# requests and
+# https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-python-3
+# api_url = '{}orgs/{}/repos'.format(api_url_base, username)
