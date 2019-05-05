@@ -13,3 +13,11 @@ https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Wards
 '''
 
 #https://data.cityofchicago.org/resource/k9yb-bpqx.json
+
+'''
+Ward Offices
+Alderman and their offices
+https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Ward-Offices/htai-wnw4
+'''
+
+# https://data.cityofchicago.org/resource/7ia9-ayc2.json
