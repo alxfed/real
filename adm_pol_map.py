@@ -18,6 +18,15 @@ https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Wards
 Ward Offices
 Alderman and their offices
 https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Ward-Offices/htai-wnw4
+2016 https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Ward-Offices-Map/8yti-tif4
 '''
 
 # https://data.cityofchicago.org/resource/7ia9-ayc2.json
+# 2016 https://data.cityofchicago.org/resource/8yti-tif4.json
+
+'''
+Cook County Commissioners District Map
+https://datacatalog.cookcountyil.gov/Finance-Administration/Cook-County-Commissioner-District-Map/ihae-id2m
+'''
+
+#https://datacatalog.cookcountyil.gov/resource/gce4-n32i.json
