@@ -22,7 +22,6 @@ sections (subarea), quarter sections, and half quarter section.
 '''
 
 # Survey Township   https://datacatalog.cookcountyil.gov/resource/iz5k-qtpu.json
-# https://datacatalog.cookcountyil.gov/api/odata/v4/iz5k-qtpu
 
 '''
 PLSS Line
