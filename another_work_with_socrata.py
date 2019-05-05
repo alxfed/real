@@ -1,11 +1,12 @@
 import json
 import requests
+import pandas as pd
 
 with open('socrata_API_token.txt', 'r') as token_file: # zoning and permits app
     api_token = token_file.read().rstrip('\n')
     token_file.close()
 
-api_url = 'https://data.cityofchicago.org/resource/ydr8-5enu.json'
+api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
 headers = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
 def rqst():
@@ -24,7 +25,18 @@ if dst is not None:
 else:
     print('[!] Request Failed')
 
+info = pd.DataFrame.from_records(dst)
+
 print('ok!')
+
+# long complex request
+
+api_url = "https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date between '2015-01-10T12:00:00' and '2015-01-10T14:00:00'"
+
+# date-time or "floating timestamp" are in ISO8601 Times
+# https://en.wikipedia.org/wiki/ISO_8601#Times
+
+dst = rqst() # works
 
 # url string formation
 
