@@ -40,10 +40,10 @@ dst = rqst() # works
 
 # url string formation
 
-api_url_base = 'https://data.cityofchicago.org/resource/'
-api_resource_id = 'ydr8-5enu.json'
+api_url_base = 'data.cityofchicago.org'
+api_resource_id = 'ydr8-5enu'
 
-api_url = '{}orgs/{}/repos'.format(api_url_base, api_resource_id)
+api_url = 'https://{}/resource/{}.json'.format(api_url_base, api_resource_id)
 
 # but f-string for complex requests _for sure_
 
@@ -52,10 +52,9 @@ argu = ''
 
 api_request = f'{api_url}?${requ}={argu}'
 
-# but if the parameters of the query are in a dictionary
+# but if the parameters of the query already are in a dictionary
 # then the trick is:
 
-'''
+
 person = {'name': 'Alex', 'age': 64}
-"Hello, {name}. You are {age}.".format(**person)
-'''
+message = "Hello, {name}. You are {age}.".format(**person)
