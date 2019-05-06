@@ -26,6 +26,7 @@ else:
     print('[!] Request Failed')
 
 info = pd.DataFrame.from_records(dst)
+info['sale_date'] = pd.to_datetime(info['sale_date'])
 
 print('ok!')
 
