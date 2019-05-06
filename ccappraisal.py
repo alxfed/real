@@ -22,7 +22,12 @@ in a given area. We then select the best performing models to use to
 value properties in Assessment Data.
 '''
 
-#https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json
+# https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json
+
+# fields description:
+# https://www.opendatanetwork.com/dataset/datacatalog.cookcountyil.gov/5pge-nu6u
+# PIN explanation: https://www.cookcountyclerk.com/service/about-property-index-number-pin
+
 
 '''
 Assessment Data
@@ -34,6 +39,9 @@ contained within the Assessment Data table.
 '''
 
 #https://datacatalog.cookcountyil.gov/resource/bcnq-qi2z.json
+# fields description:
+# https://www.opendatanetwork.com/dataset/datacatalog.cookcountyil.gov/bcnq-qi2z
+#
 
 '''
 First Pass values
