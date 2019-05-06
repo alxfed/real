@@ -27,7 +27,9 @@ value properties in Assessment Data.
 # fields description:
 # https://www.opendatanetwork.com/dataset/datacatalog.cookcountyil.gov/5pge-nu6u
 # PIN explanation: https://www.cookcountyclerk.com/service/about-property-index-number-pin
-
+# sale_date has a "Floating Timestamp" socrata format
+# sale_price is "number" (not "Money" socrata format)
+# centroid_x (Longitude) and centroid_y (Latitude) are "text" (need to verify!)
 
 '''
 Assessment Data
