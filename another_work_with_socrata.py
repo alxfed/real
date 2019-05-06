@@ -30,6 +30,8 @@ info['sale_date'] = pd.to_datetime(info['sale_date'])
 
 print('ok!')
 
+# info['sale_date'] = str(info['sale_date']) - Nope of course
+
 # long complex request
 
 api_url = "https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date between '2015-01-10T12:00:00' and '2015-01-10T14:00:00'"
