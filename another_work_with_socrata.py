@@ -55,7 +55,7 @@ argu = ''
 
 api_request = f'{api_url}?${requ}={argu}'
 
-# but if the parameters of the query already are in a dictionary
+# but if the parameters of the query are already in a dictionary
 # then the trick is:
 
 
