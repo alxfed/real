@@ -60,6 +60,8 @@ of Error may also change assessments.
 '''
 
 #https://datacatalog.cookcountyil.gov/resource/x88m-e569.json
+# Fields:
+# https://www.opendatanetwork.com/dataset/datacatalog.cookcountyil.gov/x88m-e569
 
 '''
 Now is the appeals stage. As I understand the corrections will be in the
