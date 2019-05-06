@@ -6,7 +6,7 @@ Story: https://datacatalog.cookcountyil.gov/stories/s/p2kt-hk36
 """
 
 '''
-Model Data 
+Modelling Data 
 contains every valid arm’s length transaction in a specified geographic 
 area and time period.  We define valid "arm’s length"
 as a sale where the buyer and seller act independently and do not have 
