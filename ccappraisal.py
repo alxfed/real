@@ -58,3 +58,6 @@ Now is the appeals stage. As I understand the corrections will be in the
 next bunch of datasets similar to (in 2010)
 https://datacatalog.cookcountyil.gov/resource/qh99-2dvn.json 
 '''
+
+# The description of fields in Model Data is best here:
+# https://www.opendatanetwork.com/dataset/datacatalog.cookcountyil.gov/5pge-nu6u
