@@ -1,5 +1,6 @@
 """
-Dealing with the socrata "Floating Timestamp" datatype
+Dealing with the socrata "Floating Timestamp" datatype, the idiots added
+their idiotic T between the date and the time. Thank you, idiots!
 """
 
 from dateutil.parser import parse
