@@ -16,7 +16,7 @@ with open(TOKEN_FILE, 'r') as api_token_file:       # zoning app token
     api_token_file.close()
 
 api_url = f'https://{RESOURCE_URL}/resource/{RESOURCE_ID}.json'
-#api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
+
 # ?$$exclude_system_fields=false
 # adds
 # :id	The internal Socrata identifier for this record.
@@ -24,11 +24,11 @@ api_url = f'https://{RESOURCE_URL}/resource/{RESOURCE_ID}.json'
 # :updated_at	A Fixed Timestamp representing when this record was last updated.
 # then you can use $select=:id  in your requests
 
-headers = {'Content-Type': 'application/json',
+header = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
 
 def rqst(uri):
-    response = requests.get(uri, headers=headers)
+    response = requests.get(uri, headers=header)
     if response.status_code == 200:
         return json.loads(response.content.decode('utf-8'))
     elif response.status_code == 201:
@@ -49,8 +49,9 @@ def rqst(uri):
         return None # silently return nothing
 
 dst = rqst(api_url)
-line_id = ':id == alkjdflkajsdlfkj'
-api_call = api_url + f'?where={line_id}'
+
+#line_id = ':id == alkjdflkajsdlfkj'
+#api_call = api_url + f'?where={line_id}'
 
 if dst is not None:
     print("Here's your info: ")
