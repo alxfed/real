@@ -22,12 +22,12 @@ api_url = f'https://{RESOURCE_URL}/resource/{RESOURCE_ID}.json'
 # :id	The internal Socrata identifier for this record.
 # :created_at	A Fixed Timestamp representing when this record was created.
 # :updated_at	A Fixed Timestamp representing when this record was last updated.
-# then you can use $select=:id  in your requests
+# then you can use $select=:id   in requests
 
 header = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
 
-def rqst(uri):
+def data_chunk(uri):
     response = requests.get(uri, headers=header)
     if response.status_code == 200:
         return json.loads(response.content.decode('utf-8'))
@@ -48,7 +48,7 @@ def rqst(uri):
     else:
         return None # silently return nothing
 
-dst = rqst(api_url)
+dst = data_chunk(api_url)
 
 #line_id = ':id == alkjdflkajsdlfkj'
 #api_call = api_url + f'?where={line_id}'
