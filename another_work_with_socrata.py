@@ -25,8 +25,10 @@ if dst is not None:
 else:
     print('[!] Request Failed')
 
-info = pd.DataFrame.from_records(dst)
+info = pd.DataFrame.from_records(dst)  # it would work for dictionaries too
 info['sale_date'] = pd.to_datetime(info['sale_date'])
+
+
 
 print('ok!')
 
