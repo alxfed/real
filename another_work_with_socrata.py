@@ -2,21 +2,36 @@ import json
 import requests
 import pandas as pd
 
-with open('socrata_API_token.txt', 'r') as token_file: # zoning and permits app
+with open('socrata_API_token.txt', 'r') as token_file: # zoning app token
     api_token = token_file.read().rstrip('\n')
     token_file.close()
 
 api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
 headers = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
-def rqst():
-    response = requests.get(api_url, headers=headers)
+
+def rqst(url):
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return json.loads(response.content.decode('utf-8'))
+    elif response.status_code == 201:
+        raise RuntimeError("Request Processing")
+    elif response.status_code == 400:
+        raise RuntimeError("Bad Request")
+    elif response.status_code == 401:
+        raise RuntimeError("Unauthorized")
+    elif response.status_code == 403:
+        raise RuntimeError("Forbidden")
+    elif response.status_code == 404:
+        raise RuntimeError("Not Found")
+    elif response.status_code == 429:
+        raise RuntimeError("Too many Requests")
+    elif response.status_code == 500:
+        raise RuntimeError("Server Error")
     else:
         return None
 
-dst = rqst()
+dst = rqst(api_url)
 
 if dst is not None:
     print("Here's your info: ")

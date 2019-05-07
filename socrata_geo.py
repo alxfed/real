@@ -24,3 +24,7 @@ poly = {'type': 'Polygon',
 poly_wkt = wkt.dumps(poly, decimals=2)
 
 print(poly_wkt)
+
+# http://pcjericks.github.io/py-gdalogr-cookbook/geometry.html#create-a-linestring
+
+#
