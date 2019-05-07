@@ -7,6 +7,7 @@ with open('socrata_API_token.txt', 'r') as token_file: # zoning app token
     token_file.close()
 
 api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
+# ?$$exclude_system_fields=false
 headers = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
 
