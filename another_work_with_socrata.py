@@ -1,12 +1,22 @@
+"""
+Assessor Data processing
+"""
+
+
 import json
 import requests
 import pandas as pd
 
-with open('socrata_API_token.txt', 'r') as token_file: # zoning app token
-    api_token = token_file.read().rstrip('\n')
-    token_file.close()
+RESOURCE_URL = 'datacatalog.cookcountyil.gov'
+RESOURCE_ID  = '5pge-nu6u'
+TOKEN_FILE   = 'socrata_API_token.txt'
 
-api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
+with open(TOKEN_FILE, 'r') as api_token_file:       # zoning app token
+    api_token = api_token_file.read().rstrip('\n')
+    api_token_file.close()
+
+api_url = f'https://{RESOURCE_URL}/resource/{RESOURCE_ID}.json'
+#api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
 # ?$$exclude_system_fields=false
 # adds
 # :id	The internal Socrata identifier for this record.
@@ -17,8 +27,8 @@ api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
 headers = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
 
-def rqst(url):
-    response = requests.get(url, headers=headers)
+def rqst(uri):
+    response = requests.get(uri, headers=headers)
     if response.status_code == 200:
         return json.loads(response.content.decode('utf-8'))
     elif response.status_code == 201:
@@ -39,6 +49,8 @@ def rqst(url):
         return None # silently return nothing
 
 dst = rqst(api_url)
+line_id = ':id == alkjdflkajsdlfkj'
+api_call = api_url + f'?where={line_id}'
 
 if dst is not None:
     print("Here's your info: ")
