@@ -8,6 +8,12 @@ with open('socrata_API_token.txt', 'r') as token_file: # zoning app token
 
 api_url = 'https://datacatalog.cookcountyil.gov/resource/5pge-nu6u.json'
 # ?$$exclude_system_fields=false
+# adds
+# :id	The internal Socrata identifier for this record.
+# :created_at	A Fixed Timestamp representing when this record was created.
+# :updated_at	A Fixed Timestamp representing when this record was last updated.
+# then you can use $select=:id  in your requests
+
 headers = {'Content-Type': 'application/json',
            'X-App-Token': api_token}
 
@@ -30,7 +36,7 @@ def rqst(url):
     elif response.status_code == 500:
         raise RuntimeError("Server Error")
     else:
-        return None
+        return None # silently return nothing
 
 dst = rqst(api_url)
 
