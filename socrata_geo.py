@@ -13,7 +13,13 @@ point_wkt = wkt.dumps(point, decimals=4)
 print(point_wkt)
 
 poly = {'type': 'Polygon',
-        'coordinates': [[[0.0, 0.0]], [[10.0, 30.0]], [[30.0, 10.0]], [[0.0, 0.0]]]}
+        'coordinates': [
+            [
+                [0.0, 0.0], [10.0, 30.0],
+                [30.0, 10.0], [0.0, 0.0]
+            ]
+        ] # I still don't get this additional pair of brackets
+        }
 
 poly_wkt = wkt.dumps(poly, decimals=2)
 
