@@ -10,6 +10,7 @@ import pandas as pd
 
 RESOURCE_URL = 'datacatalog.cookcountyil.gov'
 RESOURCE_ID  = '5pge-nu6u'                      # Modelling data
+PARCELS_2016 = 'a33b-b59u'                      # Last available full Parcels shapes set
 TOKEN_FILE   = 'socrata_API_token.txt'
 
 with open(TOKEN_FILE, 'r') as api_token_file:       # zoning app token
