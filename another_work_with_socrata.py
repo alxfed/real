@@ -79,9 +79,9 @@ limit = 1000    # limit of a frame within the time window
 offset = 2      # offset of the frame within the time window
 
 api_call = api_url + f'?$where=sale_date between {start_str!r} and {end_str!r}'
-api_ping = api_call + f'&$limit={limit}&$offset={offset}'
+api_frame = api_call + f'&$limit={limit}&$offset={offset}'
 
-dst = data_chunk(api_ping)
+dst = data_chunk(api_frame)
 
 if dst is not None:
     print("Here's your info: ")
