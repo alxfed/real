@@ -11,6 +11,8 @@ Socrata discovery API
 # and
 # http://api.us.socrata.com/api/catalog/v1/domains/data.cityofchicago.org/facets
 
+# then count by categories in the domain (facets)
+# http://api.us.socrata.com/api/catalog/v1/domain_categories=
 
 # http://api.us.socrata.com/api/catalog/v1?domains=datacatalog.cookcountyil.gov&search_context=datacatalog.cookcountyil.gov&limit=600
 
