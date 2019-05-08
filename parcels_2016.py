@@ -4,7 +4,6 @@ Last available full set of parcels (2016)
 
 
 import json
-import datetime as dt
 import requests
 import pandas as pd
 
