@@ -5,27 +5,32 @@ Assessor Data processing
 
 import json
 import requests
+import datetime as dt
 import pandas as pd
 
+# Constants
 RESOURCE_URL = 'datacatalog.cookcountyil.gov'
-RESOURCE_ID  = '5pge-nu6u'
+RESOURCE_ID  = '5pge-nu6u'                    # Modelling data
 TOKEN_FILE   = 'socrata_API_token.txt'
 
+# Read the token
 with open(TOKEN_FILE, 'r') as api_token_file:       # zoning app token
     api_token = api_token_file.read().rstrip('\n')
     api_token_file.close()
 
+# Compose the base URL of the api
 api_url = f'https://{RESOURCE_URL}/resource/{RESOURCE_ID}.json'
 
+# Prepare the header
+header = {'Content-Type': 'application/json',
+           'X-App-Token': api_token}
+
 # ?$$exclude_system_fields=false
-# adds
+# will add
 # :id	The internal Socrata identifier for this record.
 # :created_at	A Fixed Timestamp representing when this record was created.
 # :updated_at	A Fixed Timestamp representing when this record was last updated.
 # then you can use $select=:id   in requests
-
-header = {'Content-Type': 'application/json',
-           'X-App-Token': api_token}
 
 def data_chunk(uri):
     response = requests.get(uri, headers=header)
@@ -48,9 +53,28 @@ def data_chunk(uri):
     else:
         return None # silently return nothing
 
+'''
+# Read a predefined chunk with predefined offset
 lim = 1000
-offs = 100000
+offs = 0
 api_call = api_url + f'?$limit={lim}&$offset={offs}'
+'''
+
+'''
+# Read a chunk with sale_date in predefined window
+'''
+start_year = 2018
+start_dt = dt.datetime(year=start_year,
+                    month=11, day=28, hour=0,
+                    minute=0, second=0)
+start_str = start_dt.strftime('%Y-%m-%dT%H:%M:%S')
+
+end_year = 2019
+end_dt = dt.datetime(year=end_year,
+                  month=5, day=1, hour=0,
+                  minute=0, second=0)
+end_str = end_dt.strftime('%Y-%m-%dT%H:%M:%S')
+api_call = api_url + f'?$where=sale_date between {start_str!r} and {end_str!r}'
 
 dst = data_chunk(api_call)
 
@@ -60,14 +84,12 @@ dst = data_chunk(api_call)
 if dst is not None:
     print("Here's your info: ")
     new_chunk = pd.DataFrame.from_records(dst)
-    dataset = pd.concat(dataset, new_chunk)
-
 
 else:
     print('[!] Request Failed')
 
 
-info['sale_date'] = pd.to_datetime(info['sale_date'])
+new_chunk['sale_date'] = pd.to_datetime(new_chunk['sale_date'])
 
 
 
