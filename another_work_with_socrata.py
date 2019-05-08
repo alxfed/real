@@ -60,24 +60,24 @@ def data_chunk(uri):
 '''
 start_year = 2018
 start_dt = dt.datetime(year=start_year,
-                    month=11, day=30, hour=0,
+                    month=12, day=1, hour=0,
                     minute=0, second=0)
 start_str = start_dt.strftime('%Y-%m-%dT%H:%M:%S')
 
 end_year = 2018
 end_dt = dt.datetime(year=end_year,
-                  month=12, day=1, hour=0,    # the first empty day in the dataset (End of it)
+                  month=12, day=2, hour=0,    # the first empty day in the dataset (End of it)
                   minute=0, second=0)
 end_str = end_dt.strftime('%Y-%m-%dT%H:%M:%S')
 limit = 1000    # limit of a frame within the time window
-offset = 2      # offset of the frame within the time window
+offset = 0      # offset of the frame within the time window
 
 api_call = api_url + f'?$where=sale_date between {start_str!r} and {end_str!r}'
 api_frame = api_call + f'&$limit={limit}&$offset={offset}'
 
 dst = data_chunk(api_frame)
 
-if dst is not None:
+if dst:
     print("Here's your info: ")
     new_chunk = pd.DataFrame.from_records(dst)
     new_chunk['sale_date'] = pd.to_datetime(new_chunk['sale_date'])
