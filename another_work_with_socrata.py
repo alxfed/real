@@ -75,9 +75,13 @@ end_dt = dt.datetime(year=end_year,
                   month=12, day=1, hour=0,
                   minute=0, second=0)
 end_str = end_dt.strftime('%Y-%m-%dT%H:%M:%S')
-api_call = api_url + f'?$where=sale_date between {start_str!r} and {end_str!r}'
+limit = 1000    # limit of a frame within the time window
+offset = 2      # offset of the frame within the time window
 
-dst = data_chunk(api_call)
+api_call = api_url + f'?$where=sale_date between {start_str!r} and {end_str!r}'
+api_ping = api_call + f'&$limit={limit}&$offset={offset}'
+
+dst = data_chunk(api_ping)
 
 if dst is not None:
     print("Here's your info: ")
