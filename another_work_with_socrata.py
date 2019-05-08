@@ -54,12 +54,6 @@ def data_chunk(uri):
 #line_id = ':id == alkjdflkajsdlfkj'
 #api_call = api_url + f'?where={line_id}'
 
-'''
-# Read a predefined chunk with predefined offset	
-lim = 1000	
-offs = 0	
-api_call = api_url + f'?$limit={lim}&$offset={offs}'	
-'''
 
 '''	
 # Read a chunk with sale_date in predefined window	
@@ -72,7 +66,7 @@ start_str = start_dt.strftime('%Y-%m-%dT%H:%M:%S')
 
 end_year = 2018
 end_dt = dt.datetime(year=end_year,
-                  month=12, day=1, hour=0,
+                  month=12, day=1, hour=0,    # the first empty day in the dataset (End of it)
                   minute=0, second=0)
 end_str = end_dt.strftime('%Y-%m-%dT%H:%M:%S')
 limit = 1000    # limit of a frame within the time window
