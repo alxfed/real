@@ -2,6 +2,48 @@
 Socrata discovery API
 """
 
+
+import json
+import datetime as dt
+import requests
+
+COOKCOUNTY_DOMAIN = 'datacatalog.cookcountyil.gov'
+CITYOFCHICAGO_DOMAIN = 'data.cityofchicago.org'
+
+SOCRATA_CATALOG_URL = 'api.us.socrata.com/api/catalog/v1'
+
+def answer(uri):
+    response = requests.get(uri)
+    if response.status_code == 200:
+        return json.loads(response.content.decode('utf-8'))
+    elif response.status_code == 201:
+        raise RuntimeError("Request Processing")
+    elif response.status_code == 400:
+        raise RuntimeError("Bad Request")
+    elif response.status_code == 401:
+        raise RuntimeError("Unauthorized")
+    elif response.status_code == 403:
+        raise RuntimeError("Forbidden")
+    elif response.status_code == 404:
+        raise RuntimeError("Not Found")
+    elif response.status_code == 429:
+        raise RuntimeError("Too many Requests")
+    elif response.status_code == 500:
+        raise RuntimeError("Server Error")
+    else:
+        return None # silently return nothing
+
+
+
+facets_uri = f'https://{SOCRATA_CATALOG_URL}/domains/{CITYOFCHICAGO_DOMAIN}/facets'
+
+facet_response = answer(facets_uri)
+
+print('\n', facet_response[0], '\n', facet_response[1],
+      '\n', facet_response[2], '\n', facet_response[3],
+      '\n', facet_response[4], '\n', facet_response[5],
+      '\n', facet_response[6], '\n', facet_response[7])
+
 # facets of a domain
 # http://api.us.socrata.com/api/catalog/v1/domains/domain/facets
 
