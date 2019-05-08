@@ -66,13 +66,13 @@ api_call = api_url + f'?$limit={lim}&$offset={offs}'
 '''
 start_year = 2018
 start_dt = dt.datetime(year=start_year,
-                    month=11, day=28, hour=0,
+                    month=11, day=30, hour=0,
                     minute=0, second=0)
 start_str = start_dt.strftime('%Y-%m-%dT%H:%M:%S')
 
-end_year = 2019
+end_year = 2018
 end_dt = dt.datetime(year=end_year,
-                  month=5, day=1, hour=0,
+                  month=12, day=1, hour=0,
                   minute=0, second=0)
 end_str = end_dt.strftime('%Y-%m-%dT%H:%M:%S')
 api_call = api_url + f'?$where=sale_date between {start_str!r} and {end_str!r}'
@@ -86,10 +86,6 @@ if dst is not None:
 
 else:
     print('[!] Request Failed')
-
-info = pd.DataFrame.from_records(dst)  # it would work for dictionaries too
-info['sale_date'] = pd.to_datetime(info['sale_date'])
-
 
 
 print('ok!')
