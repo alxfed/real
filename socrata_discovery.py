@@ -39,10 +39,9 @@ facets_uri = f'https://{SOCRATA_CATALOG_URL}/domains/{CITYOFCHICAGO_DOMAIN}/face
 
 facet_response = answer(facets_uri)
 
-print('\n', facet_response[0], '\n', facet_response[1],
-      '\n', facet_response[2], '\n', facet_response[3],
-      '\n', facet_response[4], '\n', facet_response[5],
-      '\n', facet_response[6], '\n', facet_response[7])
+for one in facet_response:
+    print(one['facet'])
+
 
 # facets of a domain
 # http://api.us.socrata.com/api/catalog/v1/domains/domain/facets
