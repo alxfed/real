@@ -6,6 +6,7 @@ Socrata discovery API
 import json
 import datetime as dt
 import requests
+from pprint import pprint
 
 COOKCOUNTY_DOMAIN = 'datacatalog.cookcountyil.gov'
 CITYOFCHICAGO_DOMAIN = 'data.cityofchicago.org'
@@ -39,9 +40,12 @@ facets_uri = f'https://{SOCRATA_CATALOG_URL}/domains/{CITYOFCHICAGO_DOMAIN}/face
 
 facet_response = answer(facets_uri)
 
+pprint(facet_response)  # pretty print for json objects
+
+'''
 for one in facet_response:
     print(one['facet'], '\t', one['count'])
-
+'''
 
 # facets of a domain
 # http://api.us.socrata.com/api/catalog/v1/domains/domain/facets
