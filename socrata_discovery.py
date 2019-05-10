@@ -13,6 +13,11 @@ CITYOFCHICAGO_DOMAIN = 'data.cityofchicago.org'
 
 SOCRATA_CATALOG_URL = 'api.us.socrata.com/api/catalog/v1'
 
+class JSONobject:
+    def __init__(self, d):
+        self.__dict__ = d
+
+
 def answer(uri):
     response = requests.get(uri)
     if response.status_code == 200:
@@ -39,6 +44,10 @@ def answer(uri):
 facets_uri = f'https://{SOCRATA_CATALOG_URL}/domains/{CITYOFCHICAGO_DOMAIN}/facets'
 
 facet_response = answer(facets_uri)
+
+facet = json.loads(requests.get(facets_uri).content, encoding='utf-8', object_hook=JSONobject)
+
+# print(facet.datatypes)
 
 pprint(facet_response)  # pretty print for json objects
 
