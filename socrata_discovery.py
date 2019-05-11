@@ -43,13 +43,16 @@ def answer(uri):
 
 facets_uri = f'https://{SOCRATA_CATALOG_URL}/domains/{COOKCOUNTY_DOMAIN}/facets'
 
+datacat_uri = f'https://{SOCRATA_CATALOG_URL}?domains={COOKCOUNTY_DOMAIN}'
+
 facet_response = answer(facets_uri)
+datacat_response = answer(datacat_uri)
 
 # facet = json.loads(requests.get(facets_uri).content, encoding='utf-8', object_hook=JSONobject)
 
 # print(facet.datatypes)
 
-pprint(facet_response)  # pretty print for json objects
+pprint(datacat_response)  # pretty print for json objects
 
 '''
 for one in facet_response:
